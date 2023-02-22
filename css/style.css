@@ -1,0 +1,363 @@
+/* common */
+:root {
+  --title-color: #66737a;
+  --point-color: #2e6873;
+  --point-section-color: rgba(181, 221, 184, 0.5);
+}
+body{
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 300%;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 0.08em;
+  padding-top: 230px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--title-color);
+  letter-spacing: 0.08em;
+  text-align: center;
+  padding-bottom: 0.2em;
+  border-bottom: var(--point-color) 5px solid;
+  margin: 0 auto;
+  width: 40%;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--title-color);
+  letter-spacing: 0.08em;
+}
+p {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--title-color);
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+
+button{
+  cursor: pointer;
+}
+
+/* header */
+nav {
+  width: 100%;
+  height: 3em;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+nav ul {
+  padding-left: 0;
+  padding-top: 0.6em;
+  margin: 0 auto;
+}
+nav ul li {
+  display: inline-block;
+  padding-left: 2em;
+}
+nav ul li a {
+  position: relative;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--title-color);
+}
+.navi::after {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: var(--point-color);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+.navi:hover::after {
+  bottom: -4px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* humbager menu */
+.hamburger-menu{
+  display: none;
+}
+
+.hamburger-menu .menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    height: 60px;
+    width: 60px;
+    z-index: 90;
+    background-color: rgba(181, 221, 184, 0.9);
+    text-align: center; 
+    
+
+}
+.hamburger-menu .menu-btn i{
+  font-size: 20px;
+  line-height: 3;
+  color: var(--title-color);
+}
+
+.hamburger-menu .hide{
+  display: none;
+}
+
+input[type=checkbox]:checked ~ .menu-btn {
+  display: none;
+}
+input[type=checkbox]:checked ~ .hide{
+  display: block;
+}
+
+input[type=checkbox]:checked ~ .hamburger-navi{
+  left: 0;
+}
+
+.hamburger-menu #menu-btn-check {
+  display: none; 
+}
+
+.hamburger-menu .hamburger-navi{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: 85;
+  background-color: var(--point-section-color);
+  text-align: center;
+}
+.hamburger-menu .hamburger-navi li{
+  display: block;
+  padding-top: 40px;
+
+}
+.hamburger-menu .hamburger-navi li a{
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--title-color);
+  border-bottom: 5px var(--point-color) solid;
+}
+
+/* hero */
+
+.hero {
+  background-image: url("../img/background-hero.jpg");
+  width: 100%;
+  height: 550px;
+  background-position: left 55% bottom 20%; 
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.hero p {
+  font-size: 200%;
+  font-weight: 700;
+  color: white;
+  padding-top: 10px;
+}
+/* about */
+.about {
+  padding: 30px;
+  text-align: center;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 50px;
+}
+.about-container img {
+  width: 35%;
+  border-radius: 25px;
+}
+.about-container p {
+  text-align: left;
+}
+
+/* skills */
+.skills {
+  padding: 30px;
+  background-color: var(--point-section-color);
+  margin-top: 30px;
+  text-align: center;
+}
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 30px;
+  vertical-align: top;
+}
+.skills-container div {
+  text-align: center;
+  position: relative;
+  top: 0;
+  transition: all 0.3s;
+  border-radius: 25px;
+  padding: 30px 10px;
+}
+.skills-container div:hover {
+  top: -3px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+.skills-container .skills-icon {
+  color: white;
+  font-size: 20px;
+  padding: 30px 0;
+  text-shadow: 10px 10px 10px var(--title-color);
+  text-align: center;
+}
+.skills-container p {
+  text-align: left;
+}
+
+/* works */
+.works {
+  padding: 30px;
+}
+.works-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  margin-top: 30px;
+}
+
+.works-container li {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.works-container img {
+  min-width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: 0% 0%;
+  box-shadow: 3px 3px 3px var(--title-color);
+}
+
+.works-container .my-own-project button{
+  display: block;
+  margin: 3px auto 0;
+  padding: 3px;
+  border: var(--point-color) 1px solid; 
+  border-radius: 5%;
+  background: var(--point-section-color);
+  box-shadow: 0px 12px 24px rgba(46, 127, 123, 0.38);
+  transition: .3s;
+}
+.works-container .my-own-project button:hover{
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+  transform: translateY(4px);
+
+}
+.works-container .my-own-project button a{
+  color: var(--title-color);
+  font-size: 15px;
+}
+.works-container .my-own-project:hover::after {
+  content: "My own project";
+  line-height: 3.2;
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  color: white;
+  top: 125px;
+  left: 0;
+  background-color: var(--point-section-color);
+}
+
+.works-container li:hover::after {
+  content: "Replication Coding";
+  line-height: 3.2;
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  color: white;
+  top: 125px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* contact */
+.contact{
+  background-color: var(--point-section-color);
+  text-align: center;
+  padding: 30px;
+}
+.contact form {
+  width: 50%;
+  margin: 30px auto 0;
+  text-align: center;
+}
+.contact form input, textarea{
+  width: 100%;
+  display: block;
+  margin-top: 1em;
+  padding: 1em;
+}
+
+.contact form button{
+  display: block;
+  width: 30%;
+  margin:  1em  auto;
+  padding: 0.5em;
+}
+@media (max-width: 767px) {
+  .about-container {
+    display: block;
+
+  }
+  .about-container p {
+    margin-top: 30px;
+  }
+  .skills-container {
+    display: block;
+
+  }
+  .works-container {
+    display: block;
+  }
+  .works-container div {
+   margin-top: 25px;
+  }
+  .works-container img {
+    width: 100%;
+    height: 300px;
+  }
+  .works-container .my-own-project button{
+    margin-top: 12px;
+  }
+  .contact form{
+    width: 80%;
+  }
+}
+@media (max-width: 500px) {
+header > nav {
+  display: none;
+}
+.hamburger-menu{
+  display: block;
+}
+}
